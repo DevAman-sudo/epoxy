@@ -9,6 +9,7 @@ const SelectProduct = () => {
     try {
       const response = await axios.get("/api/discount");
       setData(response.data.data);
+      console.log(response.data)
     } catch (error) {
       console.log(error);
       setData([]);
@@ -22,7 +23,7 @@ const SelectProduct = () => {
     <div>
       {data.slice(0, 5).reverse().map((item) => (
         <a href={`/products/details?ids=${item._id}`} >
-        <div className="w-[90%] md:w-[80%] bg-pink flex mx-auto my-4 justify-evenly align-center px-4 py-8">
+        <div className="w-[90%] md:w-[60%] bg-pink flex mx-auto my-4 justify-evenly align-center px-4 py-8">
           <div className="w-1/2 leading-6">
             <p className="text-center">UP TO</p>
             <h1 className="text-center text-4xl bolder">
@@ -33,7 +34,7 @@ const SelectProduct = () => {
             </h3>
           </div>
           <div className="w-[40%] md:w-[15%] h-auto my-auto">
-            <img src={item.image} />
+            <img src={item.images[0]} />
           </div>
         </div>
         </a>

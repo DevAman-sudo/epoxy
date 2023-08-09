@@ -336,7 +336,7 @@ const crudProducts = () => {
                     <option value="">Select a category</option>
 
                     {categoryData.map((category, index) => (
-                      <option value="furniture">{category.category}</option>
+                      <option value={category.category}>{category.category}</option>
                     ))}
                   </select>
                   {formErrors.productCategory && (

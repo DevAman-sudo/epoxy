@@ -82,15 +82,17 @@ const ProductPage = () => {
     try {
       const data = await getProducts();
 
-      const filteredData = data.data.filter(
-        (item) => item.name.toLowerCase() == category.toLowerCase()
+      const filteredData = await data.data.filter((item) =>
+        item.category.toLowerCase() == category.toLowerCase()
       );
 
       console.log(filteredData);
+      console.log(data.data);
+
       setProductData(filteredData);
     } catch (error) {
       setLoading(false);
-      setMessage("Internet connection not Stable. ");
+      setMessage("Internet connection not stable.");
       setShowAlert(true);
     }
 
@@ -275,11 +277,11 @@ const ProductPage = () => {
                 onClick={() => setMobileFiltersOpen(true)}
               >
                 <span className="sr-only">Filters</span>
-                <FunnelIcon
+                {/* <FunnelIcon
                   onClick={() => setIsOpen(!isOpen)}
                   className="h-5 w-5"
                   aria-hidden="true"
-                />
+                /> */}
               </button>
             </div>
           </div>
@@ -304,7 +306,7 @@ const ProductPage = () => {
                   <h3 className="sr-only">Categories</h3>
                   <ul
                     role="list"
-                    className=" flex md:flex-col justify-center flex-wrap overflow-auto border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
+                    className=" flex md:flex-col w-auto h-auto md:h-screen overflow-x-scroll border-b border-gray-200 pb-6 text-sm font-medium text-gray-900"
                   >
                     {categoryData.map((category, index) => (
                       <li key={category._id}>
@@ -312,13 +314,15 @@ const ProductPage = () => {
                           onClick={() =>
                             handleCategorySearch(category.category)
                           }
-                          className="capitalize bold text-xl tracking-widest shadow-sm rounded-sm m-[1px]"
+                          className="w-24 capitalize bold text-xl tracking-widest shadow-sm rounded-sm m-[1px]"
                         >
                           <img
                             className="w-20 h-20 object-cover rounded-full"
                             src={category.image}
                           />
-                          <p className="text-center">{category.category}</p>
+                          <p className="mx-1 text-sm">
+                            {category.category}
+                          </p>
                         </div>
                       </li>
                     ))}
@@ -326,7 +330,7 @@ const ProductPage = () => {
                 </form>
               </Transition>
 
-              <div className="min-h-96 md:w-[90%] md:ml-auto py-2 rounded-md border-4 border-dashed border-gray-200 h-auto flex justify-evenly flex-wrap">
+              <div className="min-h-96 md:w-[90%] md:ml-auto py-2 rounded-md border-4 border-dashed border-gray-200 h-auto flex items-center justify-center flex-wrap">
                 {productData
                   .slice(
                     (currentPage - 1) * itemsPerPage,
@@ -337,7 +341,7 @@ const ProductPage = () => {
                       onClick={() => showDetails(product._id)}
                       className="flex flex-wrap cursor-pointer"
                     >
-                      <div className="p-2 w-36 md:w-52 h-80 aspect-w-1 m-1 md:p-1 bg-milky flex flex-col justify-between  hover:bg-gray-200 transition duration-300 ease-in-out transform-gpu hover:scale-105">
+                      <div className="p-2 w-36 md:w-52 h-72 md:h-80 aspect-w-1 m-1 md:p-1 bg-milky flex flex-col justify-between  hover:bg-gray-200 transition duration-300 ease-in-out transform-gpu hover:scale-105">
                         <div>
                           <img
                             className="ml-[70%] w-10 h-10 bg-themecolor rounded-full p-2 mt-2"
@@ -346,9 +350,9 @@ const ProductPage = () => {
                             onClick={() => showDetails(product._id)}
                           />
                         </div>
-                        <div className="m-4">
+                        <div className="w-full mb-auto">
                           <img
-                            className="w-24 md:w-36 m-auto"
+                            className="w-full md:w-40 m-auto"
                             src={product.images[0]}
                             alt="epoxy products"
                           />

@@ -29,9 +29,4 @@
     overflow-y: hidden;
   }
 
-  .heroImg {
-    width: 60vw;
-    height: 90vh;
-    object-fit: cover;
-  }
 }

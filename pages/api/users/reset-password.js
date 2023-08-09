@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     // Generate a unique token
     const token = crypto.randomBytes(20).toString("hex");
 
-    const resetLink = `${process.env.HOST}:${process.env.PORT}/login/verify?token=${token}`;
+    const resetLink = `${req.headers.origin}:${process.env.PORT}/login/verify?token=${token}`;
     const message = {
       from: process.env.EMAIL_USER,
       to: email,

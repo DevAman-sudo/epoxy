@@ -28,13 +28,13 @@ const Categorize = () => {
         </h1>
       </div>
 
-      <div className="flex justify-left overflow-scroll">
+      <div className="flex justify-left overflow-x-scroll">
         {categoryData.map((category, index) => (
           <a href={`/products?category=${category.category}`}>
-            <div key={index} className=" shadow-md m-2 p-4 rounded-md">
+            <div key={index} className=" shadow-md m-2 p-2 rounded-md">
               <div className="w-24 h-24 md:w-40 md:h-40  mx-auto overflow-hidden">
                 <img
-                  className="w-full h-full object-cover p-4"
+                  className="w-full h-full object-cover rounded-md"
                   src={category.image}
                   alt={category.category}
                 />

@@ -38,7 +38,7 @@ const ShopByArt = () => {
             <div key={index} className=" shadow-md m-2 p-4 rounded-md">
               <div className="w-24 h-24 md:w-40 md:h-40  mx-auto overflow-hidden">
                 <img
-                  className="w-full h-full object-cover p-4"
+                  className="w-full h-full object-cover rounded-md"
                   src={category.image}
                   alt={category.category}
                 />

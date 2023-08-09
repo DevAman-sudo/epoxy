@@ -91,7 +91,7 @@ const Navbar = () => {
         {/* logo */}
         <a href="/">
           <h1 className={`${styles.logo} text-xl text-gray-800 font-bold`}>
-            logo.
+            Inferno.
           </h1>
         </a>
 

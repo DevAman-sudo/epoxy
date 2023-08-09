@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Epoxy Nepal</title>
+        <title>Inferno</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />

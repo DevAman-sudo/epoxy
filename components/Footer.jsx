@@ -210,10 +210,7 @@ const Footer = () => {
 
           <div className="mb-6">
             <p className="text-gray-400">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti dicta,
-              aliquam sequi voluptate quas.
+            Welcome to Inferno, where dreams meet reality, and your shopping desires come to life. Step into a world of convenience, variety, and incredible savings – all at your fingertips
             </p>
           </div>
 
@@ -241,16 +238,21 @@ const Footer = () => {
             </div>
             <div className="text-left tracking-wide">
               <h2 className="text-xl font-900 mt-8 md:mt-0">Get In Touch</h2>
-              <p className="mt-2 underline text-gray-700">+977-9864260127</p>
-              <p className="mt-2 underline text-gray-700">devaman.net@gmail.com</p>
+              <p className="mt-2 underline text-gray-700">+977-9766910584</p>
+              <p className="mt-2 underline text-gray-700">+977-9762425505</p>
+              <p className="mt-2 underline text-gray-700">inferno.interiors@gmail.com</p>
             </div>
           </div>
         </div>
 
         <div className="text-center p-4 text-bold">
           © 2023 Copyright:
+           Inferno Interior's
+        </div>
+        <div className="text-center p-1 text-bold">
+          Designed & Developed by:
           <a className="text-black font-semibold mx-1" href="https://www.facebook.com/devaman.sudo/">
-            Devaman
+            Aman Shah
           </a>
         </div>
       </footer>
